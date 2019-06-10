@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Strings" class="control-label"></label>
-                <input asp-for="Strings" class="form-control" />
+                @Html.EditorFor(model => model.Strings)                
                 <span asp-validation-for="Strings" class="text-danger"></span>
             </div>
             <div class="form-group">
