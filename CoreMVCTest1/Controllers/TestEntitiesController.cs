@@ -54,7 +54,7 @@ namespace CoreMVCTest1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Strings")] TestEntity testEntity)
+        public async Task<IActionResult> Create([Bind("ID,Name,Hard")] TestEntity testEntity)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CoreMVCTest1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Strings")] TestEntity testEntity)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Hard")] TestEntity testEntity)
         {
             if (id != testEntity.ID)
             {

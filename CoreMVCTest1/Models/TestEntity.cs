@@ -9,6 +9,6 @@ namespace CoreMVCTest1.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string[] Strings { get; set; }
+        public string[] Hard { get; set; }
     }
 }

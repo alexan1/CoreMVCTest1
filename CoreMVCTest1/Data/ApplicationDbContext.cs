@@ -19,7 +19,7 @@ namespace CoreMVCTest1.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<TestEntity>()
-                .Property(e => e.Strings)
+                .Property(e => e.Hard)
                 .HasConversion(
                     v => string.Join(',', v),
                     v => v.Split(',', StringSplitOptions.RemoveEmptyEntries));
