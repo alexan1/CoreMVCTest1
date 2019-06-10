@@ -73,7 +73,7 @@ namespace CoreMVCTest1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=TestEntities}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
