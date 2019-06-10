@@ -17,6 +17,7 @@ namespace CoreMVCTest1.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<TestEntity>()
                 .Property(e => e.Strings)
                 .HasConversion(
