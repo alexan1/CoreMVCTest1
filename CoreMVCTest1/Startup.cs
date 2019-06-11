@@ -37,6 +37,7 @@ namespace CoreMVCTest1
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
@@ -44,7 +45,7 @@ namespace CoreMVCTest1
             {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
+            });            
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
