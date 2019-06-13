@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoreMVCTest1.Data;
 using CoreMVCTest1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoreMVCTest1.Controllers
 {
@@ -44,6 +45,7 @@ namespace CoreMVCTest1.Controllers
         }
 
         // GET: TestEntities/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -52,6 +54,7 @@ namespace CoreMVCTest1.Controllers
         // POST: TestEntities/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Name,Hard")] TestEntity testEntity)
@@ -66,6 +69,7 @@ namespace CoreMVCTest1.Controllers
         }
 
         // GET: TestEntities/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +88,7 @@ namespace CoreMVCTest1.Controllers
         // POST: TestEntities/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Hard")] TestEntity testEntity)
@@ -117,6 +122,7 @@ namespace CoreMVCTest1.Controllers
         }
 
         // GET: TestEntities/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +141,7 @@ namespace CoreMVCTest1.Controllers
         }
 
         // POST: TestEntities/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
